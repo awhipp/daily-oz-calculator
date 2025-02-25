@@ -1,0 +1,25 @@
+.weight-input {
+  text-align: center;
+}
+
+.scale {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
