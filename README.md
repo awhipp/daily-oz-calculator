@@ -2,6 +2,8 @@
 
 A daily oz calculator for newborns to determine the amount of food they need based on their weight and the current time.
 
+[![Build](https://github.com/awhipp/daily-oz-calculator/actions/workflows/build.yml/badge.svg)](https://github.com/awhipp/daily-oz-calculator/actions/workflows/build.yml)
+
 ## Table of Contents
 
 - [Installation](#installation)
