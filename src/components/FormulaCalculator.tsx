@@ -36,7 +36,11 @@ const FormulaCalculator: React.FC<FormulaCalculatorProps> = ({ weight }) => {
   return (
     <div>
       <h2> Ounces of Food </h2>
-      <sub> ((Weight * 2.5)/24) * current_hour </sub>
+      <sub> <a 
+      target="_blank" 
+      href="https://www.healthline.com/health/parenting/how-many-ounces-do-newborns-need-to-eat">
+      ((Weight * 2.5)/24) * current_hour
+      </a> </sub>
       <h3 title={getCalcString(ounces, pounds, currentHour)}>
         {ounces.toFixed(2)} oz
       </h3>
