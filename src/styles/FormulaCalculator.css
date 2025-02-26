@@ -5,3 +5,7 @@ h2 {
 sub {
   font-size: 0.7em;
 }
+
+a {
+    color: white;
+}

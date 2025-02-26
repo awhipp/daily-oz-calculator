@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ProgressBar from "./ProgressBar";
 import "../styles/FormulaCalculator.css";
 
 interface FormulaCalculatorProps {
@@ -32,18 +33,40 @@ const FormulaCalculator: React.FC<FormulaCalculatorProps> = ({ weight }) => {
   }, []);
 
   const pounds = weight.pounds + weight.ounces / 16;
-  const ounces = pounds > 0 ? ((2.5 * pounds) / 24) * currentHour : 0;
+  const suggestedOunces = pounds > 0 ? ((2.5 * pounds) / 24) * currentHour : 0;
+  const totalOunces = pounds * 2.5;
   return (
     <div>
-      <h2> Ounces of Food </h2>
-      <sub> <a 
-      target="_blank" 
-      href="https://www.healthline.com/health/parenting/how-many-ounces-do-newborns-need-to-eat">
-      ((Weight * 2.5)/24) * current_hour
-      </a> </sub>
-      <h3 title={getCalcString(ounces, pounds, currentHour)}>
-        {ounces.toFixed(2)} oz
-      </h3>
+        {/* If pounds > 0 then show the formula */}
+        {pounds > 0 && (
+      <div>
+        <br></br>
+        <hr></hr>
+        <h2> 
+          <em>
+            <a 
+              target="_blank" 
+              href="https://www.healthline.com/health/parenting/how-many-ounces-do-newborns-need-to-eat">
+                Suggested Intake
+            </a>  
+          </em>
+        </h2>
+        <sub>  </sub>
+
+        <ProgressBar
+          value={suggestedOunces}
+          max={totalOunces}
+          current={suggestedOunces}
+          total={totalOunces}
+          remaining={totalOunces - suggestedOunces}
+        />
+        <p title={getCalcString(suggestedOunces, pounds, currentHour)}>
+          By Now: {suggestedOunces.toFixed(2)} oz <br></br>
+          Daily: {totalOunces.toFixed(2)} oz <br></br>
+          Remaining: {(totalOunces - suggestedOunces).toFixed(2)} oz
+        </p>
+      </div>
+            )}
     </div>
   );
 };
