@@ -56,9 +56,6 @@ const FormulaCalculator: React.FC<FormulaCalculatorProps> = ({ weight }) => {
         <ProgressBar
           value={suggestedOunces}
           max={totalOunces}
-          current={suggestedOunces}
-          total={totalOunces}
-          remaining={totalOunces - suggestedOunces}
         />
         <p title={getCalcString(suggestedOunces, pounds, currentHour)}>
           By Now: {suggestedOunces.toFixed(2)} oz <br></br>
