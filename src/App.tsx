@@ -8,6 +8,11 @@ const App: React.FC = () => {
     <div className="App">
       <Clock />
       <WeightInput />
+      <footer className="footer">
+        <a href="https://github.com/awhipp/daily-oz-calculator" target="_blank" rel="noopener noreferrer">
+            Github
+        </a>
+      </footer>
     </div>
   );
 };
